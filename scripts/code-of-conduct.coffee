@@ -19,8 +19,10 @@
 module.exports = (robot) ->
   homophobic = ["gay", "viado", "bicha", "boiola", "viadinho", "bichona", "chupa", "chupar", "g0y", "lésbica", "homosexual", "machona"]
   chauvinist = ["coisa de menina", "afeminado", "igual mulher", "igual garota", "igual menina", "mocinha", "lugar de mulher", "vadia", "vagabunda"]
-  expressions = homophobic.concat chauvinist
+  political = ["Lula", "Dilma", "Dilmãe", "Bolsonaro", "Bolsomito", "FHC", "Lacra o 13"]
 
+  expressions = homophobic.concat(chauvinist).concat(political)
+  
   regex = RegExp('(' + expressions.join('|') + ')', 'i')
   robot.hear regex, (msg) ->
     msg.send "Ei <@#{msg.envelope.user.id}>. *#{msg.match[1]}* não é legal de se falar por aqui. " +
