@@ -4,7 +4,7 @@
 #
 
 module.exports = (robot) ->
-    dumbwords = ["burro","burrinho","burrão","idiota","otário","vacilão"]
+    dumbwords = ["burro","burrinho","burrão","idiota","vacilão","otário"]
     regex = RegExp(dumbwords.join('.*hubot|').concat '.*hubot|hubot.*'.concat dumbwords.join('|hubot.*'), 'i')
 
     robot.hear regex, (msg) ->
